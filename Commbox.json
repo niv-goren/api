@@ -496,7 +496,7 @@
       },
       "post": {
         "tags": [
-          "Streams"
+          "Managers"
         ],
         "summary": "Create Object",
         "description": "Create object on specific stream",
@@ -609,7 +609,7 @@
     "/streams/{STREAM_ID}/objects/{OBJECT_ID}/child": {
       "post": {
         "tags": [
-          "Streams"
+          "Managers"
         ],
         "summary": "Create Child Object",
         "description": "Create new child object for specific object in stream <br><br>(POST) /streams/STREAM_ID/objects/OBJECT_ID/child<br>(POST) /streams/STREAM_ID/objects/STREAM_PROVIDER_ID/STREAM_PROVIDER_TYPE/child",
@@ -709,7 +709,7 @@
     "/streams/{STREAM_ID}/objects/{OBJECT_ID}": {
       "get": {
         "tags": [
-          "Streams"
+          "Managers"
         ],
         "summary": "Get Object",
         "description": "Returns a specific object in requested stream</br></br>(GET) /streams/STREAM_ID/objects/OBJECT_ID  <br> (GET) /streams/STREAM_ID/objects/STREAM_PROVIDER_ID/providerType/STREAM_PROVIDER_TYPE <br><br><b>Example:</b> <br>https://api.commbox.io/streams/532/objects/293854?access_token=********************** https://api.commbox.io/streams/532/objects/972505555555/providerType/5?access_token=**********************",
@@ -1085,7 +1085,7 @@
     "/streams/{STREAM_ID}/objects/{OBJECT_ID}/tags/{TAG_ID}": {
       "post": {
         "tags": [
-          "Streams"
+          "Tags"
         ],
         "summary": "Set Object Tag",
         "description": "Set a tag for specific object</br></br>(POST) /streams/STREAM_ID/objects/OBJECT_ID/tags/TAG_ID<br>(POST) /streams/STREAM_ID/objects/STREAM_PROVIDER_ID/STREAM_PROVIDER_TYPE/tags/TAG_ID<br><br><b>Example:</b>",
@@ -1170,7 +1170,7 @@
       },
       "delete": {
         "tags": [
-          "Streams"
+          "Tags"
         ],
         "summary": "Delete Object Tag",
         "description": "Delete a tag for specific object</br></br>(POST) /streams/STREAM_ID/objects/OBJECT_ID/tags/TAG_ID",
