@@ -496,7 +496,7 @@
       },
       "post": {
         "tags": [
-          "Streams"
+          "Objects"
         ],
         "summary": "Create Object",
         "description": "Create object on specific stream",
