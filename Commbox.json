@@ -43,7 +43,8 @@
         "WhatsApp",
         "Tags",
         "Forms",
-        "Ticket"
+        "Ticket",
+        "Automation"
       ]
     }
   ],
@@ -5764,8 +5765,279 @@
           }
         }
       }
+    },
+    "/automation/objects/{OBJECT_ID}/context": {
+      "get": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Get Object Context",
+        "description": "Returns object data context",
+        "operationId": "Get_Object_Context",
+        "parameters": [
+          {
+            "name": "OBJECT_ID",
+            "in": "path",
+            "description": "Object ID. This is a commbox generated number",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/parameters/OBJECT_ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": 200
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Operation successful"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data.plus": {
+                          "type": "string",
+                          "example": "4"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request could not be understood by the server. Incoming parameters might not be valid"
+          },
+          "401": {
+            "description": "Unauthorized - The supplied credentials, if any, are not sufficient to access the resource"
+          },
+          "404": {
+            "description": "Not found - The requested resource is not found"
+          },
+          "429": {
+            "description": "Too Many Requests - Too many requests have been made in a short period of time (Throttling)"
+          },
+          "500": {
+            "description": "Server Error - The server could not return the representation due to an internal server error"
+          },
+          "501": {
+            "description": "Not Implemented - The requested operation is not supported"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Insert Data Context",
+        "description": "Insert data context to conversation",
+        "operationId": "Insert_Data_Context",
+        "parameters": [
+          {
+            "name": "OBJECT_ID",
+            "in": "path",
+            "description": "Object ID. This is a commbox generated number",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/parameters/OBJECT_ID"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Optional description for new mail object in  *Markdown*",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "plus": {
+                        "type": "integer",
+                        "example": 3
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "John"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": 200
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Operation successful"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": 21221
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request could not be understood by the server. Incoming parameters might not be valid"
+          },
+          "401": {
+            "description": "Unauthorized - The supplied credentials, if any, are not sufficient to access the resource"
+          },
+          "404": {
+            "description": "Not found - The requested resource is not found"
+          },
+          "429": {
+            "description": "Too Many Requests - Too many requests have been made in a short period of time (Throttling)"
+          },
+          "500": {
+            "description": "Server Error - The server could not return the representation due to an internal server error"
+          },
+          "501": {
+            "description": "Not Implemented - The requested operation is not supported"
+          }
+        }
+      }
+    },
+    "/automation/objects/{OBJECT_ID}/context/jump": {
+      "post": {
+        "tags": [
+          "Automation"
+        ],
+        "summary": "Jump to node",
+        "description": "Jump to node",
+        "operationId": "JUMP_TO_NODE",
+        "parameters": [
+          {
+            "name": "OBJECT_ID",
+            "in": "path",
+            "description": "OBJECT ID. This is a commbox generated number",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/parameters/OBJECT_ID"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Optional description for new mail object in  *Markdown*",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "example": "4079:n_8"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": 200
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Operation successful"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": null
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request could not be understood by the server. Incoming parameters might not be valid"
+          },
+          "401": {
+            "description": "Unauthorized - The supplied credentials, if any, are not sufficient to access the resource"
+          },
+          "404": {
+            "description": "Not found - The requested resource is not found"
+          },
+          "429": {
+            "description": "Too Many Requests - Too many requests have been made in a short period of time (Throttling)"
+          },
+          "500": {
+            "description": "Server Error - The server could not return the representation due to an internal server error"
+          },
+          "501": {
+            "description": "Not Implemented - The requested operation is not supported"
+          }
+        }
+      }
     }
+
+
   },
+
   "components": {
     "securitySchemes": {
       "access_token": {
