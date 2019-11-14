@@ -1637,22 +1637,6 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "The manager that initiated the status change (optional, default is System)",
-          "required": false,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Manager"
-              },
-              "example": {
-                "data": {
-                  "ManagerId": "01234567"
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK",
