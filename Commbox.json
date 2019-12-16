@@ -4702,7 +4702,7 @@
                     "properties": {
                       "code": {
                         "type": "string",
-                        "example": "EN_US"
+                        "example": "en_US"
                       }
                     }
                   },
