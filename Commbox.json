@@ -5621,7 +5621,7 @@
                       },
                       "streamProviderType": {
                         "type": "integer",
-                        "example": "5"
+                        "example": 5
                       },
                       "referringObjectId": {
                         "type": "integer",
