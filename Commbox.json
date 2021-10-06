@@ -6284,24 +6284,6 @@
         "schema": {
           "type": "string"
         }
-      },
-      "unixStartTime": {
-        "name": "unixStartTime",
-        "in": "query",
-        "description": "unix time stamp (UTC) of object's created time start date (optional), must be sent with unixEndTime",
-        "schema": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "unixEndTime": {
-        "name": "unixEndTime",
-        "in": "query",
-        "description": "unix time stamp (UTC) of object's created time end date (optional), must be sent with unixStartTime",
-        "schema": {
-         "type": "integer",
-          "format": "int64"
-        }
       }
     },
     "schemas": {
