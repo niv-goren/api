@@ -6394,21 +6394,12 @@
       "Object": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Object ID. This is a commbox generated number"
-          },
-          "StreamId": {
-            "type": "integer",
-            "description": "Stream ID to which the object is connected"
-          },
           "SubStreamId": {
             "type": "integer",
             "format": "int64",
             "description": "Sub Stream ID to which the object is connected"
           },
-          "type": {
+          "Type": {
             "type": "integer",
             "format": "int64",
             "description": "The type of the object"
@@ -6416,6 +6407,30 @@
           "StatusId": {
             "type": "string",
             "description": "Current status ID"
+          },
+          "StreamProviderType": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Type of the object original stream provider"
+          },
+          "StreamProviderId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Generated guid chars"
+          },
+          "UserStreamProviderId": {
+            "type": "string",
+            "description": "Identity’s unique identifier as it appears at the original provider"
+          },
+          "UserStreamProviderType": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Type of the user original provider"
+          },
+          "UserIdentity": {
+            "type": "integer",
+            "format": "int64",
+            "description": "User identity id"
           },
           "CreatedTime": {
             "type": "string",
