@@ -26,7 +26,7 @@
   ],
   "security": [
     {
-      "BearerAuth": []
+      "BearerAuth": [ ]
     }
   ],
   "x-tagGroups": [
@@ -217,7 +217,28 @@
             "$ref": "#/components/parameters/identityStreamProviderType"
           },
           {
+            "$ref": "#/components/parameters/unixStartTime"
+          },
+          {
+            "$ref": "#/components/parameters/unixEndTime"
+          },
+          {
             "$ref": "#/components/parameters/subStream"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/order"
+          },
+          {
+            "$ref": "#/components/parameters/includeChilds"
+          },
+          {
+            "$ref": "#/components/parameters/includeActivityLog"
+          },
+          {
+            "$ref": "#/components/parameters/timeFilter"
           },
           {
             "$ref": "#/components/parameters/pageNumber"
@@ -514,30 +535,136 @@
           }
         ],
         "requestBody": {
-          "description": "Optional description for new mail object in  *Markdown* </br><b>Important</b> - StreamProviderId should be self generated guid 24 chars length minimum",
+          "description": "Description of request body parameters",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Object"
               },
-              "example": {
-                "data": {
-                  "Type": 5,
-                  "UserStreamProviderId": "somestream@commbox.io",
-                  "UserStreamProviderType": 4,
-                  "StreamProviderId": "b9910a75a46c492c9cf46a910cdba0012",
-                  "Content": {
-                    "subject": "mail subject"
-                  },
-                  "Message": "some message",
-                  "User": {
-                    "UniqueId": "01234567",
-                    "LastName": "Doe",
-                    "FirstName": "John",
-                    "Phone1": "05055555555",
-                    "Email": "JohnDoe@gmail.com",
-                    "Remarks": "some remark for user"
+              "examples": {
+                "Mail": {
+                  "value": {
+                    "data": {
+                      "Type": 5,
+                      "StatusId": 1,
+                      "StreamProviderType": 4,
+                      "StreamProviderId": "b9910a75a46c492c9cf46a910cdba0012",
+                      "UserStreamProviderId": "somestream@commbox.io",
+                      "UserStreamProviderType": 4,
+                      "Content": {
+                        "subject": "mail subject"
+                      },
+                      "Message": "some message",
+                      "User": {
+                        "UniqueId": "01234567",
+                        "LastName": "Doe",
+                        "FirstName": "John",
+                        "Phone1": "05055555555",
+                        "Email": "JohnDoe@gmail.com",
+                        "Remarks": "some remark for user"
+                      }
+                    }
+                  }
+                },
+                "SMS": {
+                  "value": {
+                    "data": {
+                      "Type": 4,
+                      "StatusId": 1,
+                      "StreamProviderType": 5,
+                      "StreamProviderId": "972544444444",
+                      "UserStreamProviderId": "972544444444",
+                      "UserStreamProviderType": 5,
+                      "Message": "some message",
+                      "User": {
+                        "UniqueId": "01234567",
+                        "LastName": "Doe",
+                        "FirstName": "John",
+                        "Phone1": "972544444444",
+                        "Email": "JohnDoe@gmail.com",
+                        "Remarks": "some remark for user"
+                      }
+                    }
+                  }
+                },
+                "SMS Multi-recipient": {
+                  "value": {
+                    "data": {
+                      "Type": 4,
+                      "StatusId": 1,
+                      "StreamProviderType": 5,
+                      "UserStreamProviderId": "972544444444",
+                      "UserStreamProviderType": 5,
+                      "sendToClient": true,
+                      "Content": {
+                        "to": [
+                          "972522222222"
+                        ]
+                      },
+                      "Message": "some message",
+                      "User": {
+                        "UniqueId": "01234567",
+                        "LastName": "Doe",
+                        "FirstName": "John",
+                        "Phone1": "972544444444",
+                        "Email": "JohnDoe@gmail.com",
+                        "Remarks": "some remark for user"
+                      }
+                    }
+                  }
+                },
+                "WhatsApp": {
+                  "value": {
+                    "data": {
+                      "Type": 4,
+                      "StatusId": 1,
+                      "StreamProviderType": 7,
+                      "StreamProviderId": "972544444444",
+                      "UserStreamProviderId": "972544444444",
+                      "UserStreamProviderType": 5,
+                      "Content": {
+                        "to": [
+                          "972522222222"
+                        ],
+                        "whatsapp_hsm_name": "test_template",
+                        "whatsapp_localizable_params": [
+                          "check_1"
+                        ],
+                        "whatsapp_language_code": "en"
+                      },
+                      "Message": "some message",
+                      "User": {
+                        "UniqueId": "01234567",
+                        "LastName": "Doe",
+                        "FirstName": "John",
+                        "Phone1": "972544444444",
+                        "Email": "JohnDoe@gmail.com",
+                        "Remarks": "some remark for user"
+                      }
+                    }
+                  }
+                },
+                "Chat": {
+                  "value": {
+                    "data": {
+                      "Type": 4,
+                      "StatusId": 1,
+                      "StreamProviderType": 0,
+                      "UserStreamProviderId": "972544444444",
+                      "UserStreamProviderType": 5,
+                      "UserIdentity": 100000000419660,
+                      "Message": "some message",
+                      "createChildObject": true,
+                      "User": {
+                        "UniqueId": "01234567",
+                        "LastName": "Doe",
+                        "FirstName": "John",
+                        "Phone1": "972544444444",
+                        "Email": "JohnDoe@gmail.com",
+                        "Remarks": "some remark for user"
+                      }
+                    }
                   }
                 }
               }
@@ -738,6 +865,12 @@
             "schema": {
               "$ref": "#/components/parameters/OBJECT_ID"
             }
+          },
+          {
+            "$ref": "#/components/parameters/includeChilds"
+          },
+          {
+            "$ref": "#/components/parameters/includeActivityLog"
           }
         ],
         "responses": {
@@ -1843,7 +1976,7 @@
         }
       }
     },
-      "/objects/{OBJECT_ID}/remarks": {
+    "/objects/{OBJECT_ID}/remarks": {
       "post": {
         "tags": [
           "Objects"
@@ -6347,6 +6480,46 @@
           "format": "int64"
         }
       },
+      "sort": {
+        "name": "sort",
+        "in": "query",
+        "description": "Sort of return objects (optional, default desc). Possible values: desc, asc",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "order": {
+        "name": "order",
+        "in": "query",
+        "description": "Order of return objects (optional, default createdtime). Possible values: createdtime, closedtime, prioritytime, updatedtime",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "includeChilds": {
+        "name": "includeChilds",
+        "in": "query",
+        "description": "Return objects with their childs (optional, default true)",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "includeActivityLog": {
+        "name": "includeActivityLog",
+        "in": "query",
+        "description": "Return objects with their activity log (optional, default false)",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "timeFilter": {
+        "name": "timeFilter",
+        "in": "query",
+        "description": "Determines according to which object datetime field affects unixStartTime & unixEndTime (optional, relevant only for ElasticSearch)",
+        "schema": {
+          "type": "string"
+        }
+      },
       "pageNumber": {
         "name": "pageNumber",
         "in": "query",
@@ -6374,7 +6547,7 @@
       "unixStartTime": {
         "name": "unixStartTime",
         "in": "query",
-        "description": "unix time stamp (UTC) of object's created time start date (optional), must be sent with unixEndTime",
+        "description": "Unix time stamp (UTC) of object's created time start date (optional), must be sent with unixEndTime",
         "schema": {
           "type": "integer",
           "format": "int64"
@@ -6383,9 +6556,9 @@
       "unixEndTime": {
         "name": "unixEndTime",
         "in": "query",
-        "description": "unix time stamp (UTC) of object's created time end date (optional), must be sent with unixStartTime",
+        "description": "Unix time stamp (UTC) of object's created time end date (optional), must be sent with unixStartTime",
         "schema": {
-         "type": "integer",
+          "type": "integer",
           "format": "int64"
         }
       }
@@ -6394,21 +6567,12 @@
       "Object": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Object ID. This is a commbox generated number"
-          },
-          "StreamId": {
-            "type": "integer",
-            "description": "Stream ID to which the object is connected"
-          },
           "SubStreamId": {
             "type": "integer",
             "format": "int64",
             "description": "Sub Stream ID to which the object is connected"
           },
-          "type": {
+          "Type": {
             "type": "integer",
             "format": "int64",
             "description": "The type of the object"
@@ -6417,46 +6581,51 @@
             "type": "string",
             "description": "Current status ID"
           },
-          "CreatedTime": {
-            "type": "string",
-            "format": "datetime",
-            "description": "When the object was created"
-          },
-          "FirstResponseTime": {
-            "type": "string",
-            "format": "datetime",
-            "description": "When the first response to the object was registered"
-          },
-          "UpdatedTime": {
-            "type": "string",
-            "format": "datetime",
-            "description": "When the object was last updated"
-          },
-          "PriorityTime": {
-            "type": "string",
-            "format": "datetime",
-            "description": "When the object is currently prioritized"
-          },
-          "NumChilds": {
+          "StreamProviderType": {
             "type": "integer",
-            "description": "Number of child objects relating to this parent object"
+            "format": "int64",
+            "description": "Type of the object original stream provider"
           },
-          "IsManager": {
-            "type": "boolean",
-            "description": "Indicates whether this object was created by a manager"
-          },
-          "NumTags": {
+          "StreamProviderId": {
             "type": "integer",
-            "description": "Number of tags assigned to this object"
+            "format": "int64",
+            "description": "Generated guid chars"
           },
-          "Message": {
+          "UserStreamProviderId": {
             "type": "string",
-            "description": "The text containing the object’s primary message"
+            "description": "Identity’s unique identifier as it appears at the original provider"
+          },
+          "UserStreamProviderType": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Type of the user original provider"
+          },
+          "UserIdentity": {
+            "type": "integer",
+            "format": "int64",
+            "description": "User identity id"
+          },
+          "ManagerId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The manager who create the object (optional)"
           },
           "Content": {
             "type": "string",
             "format": "JSON string",
             "description": "String containing extended properties of the object"
+          },
+          "Message": {
+            "type": "string",
+            "description": "The text containing the object’s primary message <b>(required)</b>"
+          },
+          "sendToClient": {
+            "type": "boolean",
+            "description": "If true - send message without saving it <b>(relevant for SMS streams only)</b>"
+          },
+          "createChildObject": {
+            "type": "boolean",
+            "description": "If true - "
           },
           "User": {
             "type": "object",
