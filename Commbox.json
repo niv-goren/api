@@ -6882,7 +6882,7 @@
       "Object Types": {
         "type": "string",
         "enum": [
-          "Status = 0",
+          "Text = 0",
           "Link = 1",
           "Photo = 2",
           "Video = 3",
@@ -6893,7 +6893,12 @@
           "Voice = 8",
           "Review = 9",
           "Form = 10",
-          "System Message = 11"
+          "System Message = 11",
+          "Option = 12",
+          "InputData = 13",
+          "Contacts = 14",
+          "Album = 15",
+          "TemplateMessage = 16"
         ]
       },
       "Object Statuses": {
@@ -6908,13 +6913,17 @@
           "Draft = 7",
           "In Process = 8",
           "Scheduled = 9",
-          "Follow Up = 10"
+          "Follow Up = 10",
+          "Automated = 11",
+          "Sent = 13",
+          "Archive = 14",
+          "Pending = 15"
         ]
       },
       "Stream Provider Types": {
         "type": "string",
         "enum": [
-          "commbox = 0",
+          "Commbox = 0",
           "Facebook = 1",
           "Twitter = 2",
           "YouTube = 3",
@@ -6925,7 +6934,11 @@
           "Web = 8",
           "AppleAppStore = 9",
           "Instagram= 10",
-          "Google = 11"
+          "Google = 11",
+          "Telegram= 12",
+          "GoogleMyBusiness = 13",
+          "Microsoft365 = 14",
+          "Gmail = 15"
         ]
       },
       "Object Activity Types": {
@@ -6941,7 +6954,15 @@
           "FollowUp = 8",
           "UpdateObjectIntent = 9",
           "Attachment = 10",
-          "ObjectRouted = 11"
+          "ObjectRouted = 11",
+          "ObjectRouted = 11",
+          "Custom = 12",
+          "UpdateObjectPublicity = 13",
+          "UnValidExtensionFile = 15",
+          "UnValidFileSize = 16",
+          "UnAllowedFileUpload = 17",
+          "InactivityLogout = 18",
+          "ParticipantChange = 19"
         ]
       },
       "Modules Types": {
@@ -6970,7 +6991,31 @@
           "INTERACTIVE_NAVIGATOR = 25",
           "WEBRTC_VIDEO_CHAT = 26",
           "WEBRTC_AUDIO_CHAT = 27",
-          "FORMS = 28"
+          "FORMS = 28",
+          "CUSTOMER_VERIFICATION = 29",
+          "DYNAMICS_CRM_CONNECTOR = 31",
+          "CUSTOM_FIELDS = 32",
+          "RIGHTNOW_CRM = 33",
+          "RULES = 34",
+          "EXTERNAL_CONTACTS = 35",
+          "WORKING_HOURS = 36",
+          "CUSTOM = 37",
+          "FACEBOOK_MESSENGER = 38",
+          "MAINTENANCE = 39",
+          "PRIVACY_AND_SECURITY = 40",
+          "AUTO_ASSIGN = 41",
+          "TWO_FACTOR_AUTHENTICATION = 42",
+          "THEMES = 43",
+          "TELEGRAM = 44",
+          "GOOGLE_MY_BUSINESS = 45",
+          "SAP_CRM = 46",
+          "SLA = 47",
+          "PUSH_NOTIFICATIONS = 48",
+          "SYS_AID = 49",
+          "WORKFLOW = 50",
+          "INSTAGRAM_DM = 52",
+          "PRIORITY = 53",
+          "JIRA = 54"
         ]
       }
     }
