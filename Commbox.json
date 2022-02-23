@@ -2159,6 +2159,100 @@
             "description": "Not Implemented - The requested operation is not supported"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Get object indicators",
+        "description": "Get the object's current indicators",
+        "operationId": "Get_Object_Indicators",
+        "parameters": [
+          {
+            "name": "OBJECT_ID",
+            "in": "path",
+            "description": "Object ID. This is a commbox generated number",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/parameters/OBJECT_ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": 200
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "OK"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "indicators": {
+                          "type": "object",
+                          "properties": {
+                            "custom_indicator": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "type": "string",
+                                  "example": "Related to commbox"
+                                },
+                                "displayClass": {
+                                  "type": "string",
+                                  "example": "icon-info"
+                                },
+                                "link": {
+                                  "type": "string",
+                                  "example": "https://example-custom-indicator.com/"
+                                },
+                                "text": {
+                                  "type": "string",
+                                  "example": "Alert"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request could not be understood by the server. Incoming parameters might not be valid"
+          },
+          "401": {
+            "description": "Unauthorized - The supplied credentials, if any, are not sufficient to access the resource"
+          },
+          "404": {
+            "description": "Not found - The requested resource is not found"
+          },
+          "429": {
+            "description": "Too Many Requests - Too many requests have been made in a short period of time (Throttling)"
+          },
+          "500": {
+            "description": "Server Error - The server could not return the representation due to an internal server error"
+          },
+          "501": {
+            "description": "Not Implemented - The requested operation is not supported"
+          }
+        }
       }
     },
     "/objects/{OBJECT_ID}/indicators/{INDICATOR_ID}": {
