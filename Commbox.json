@@ -26,7 +26,7 @@
   ],
   "security": [
     {
-      "BearerAuth": [ ]
+      "BearerAuth": []
     }
   ],
   "x-tagGroups": [
@@ -5611,8 +5611,111 @@
                       "example": "2014-08-06T07:51:52.2581942Z"
                     },
                     "data": {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "recipient": {
+                                "type": "string",
+                                "description": "Recipient number",
+                                "example": 972546663529
+                              },
+                              "id": {
+                                "type": "string",
+                                "example": "gBEGlyVGZjUpAgmyuqAHfxbHmnQ"
+                              },
+                              "status": {
+                                "type": "integer",
+                                "format": "int32",
+                                "example": 200
+                              },
+                              "object_id": {
+                                "type": "integer",
+                                "format": "int64",
+                                "example": 38383744,
+                                "description": "Object ID. This is a commbox generated number (optional)"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Provider returned failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
                       "type": "string",
-                      "example": "gBEGlyUFcWM1AglR5QFZKmMxwjc"
+                      "example": 206
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Missing template parameter"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "recipient": {
+                                "type": "string",
+                                "description": "Recipient number",
+                                "example": 972546663529
+                              },
+                              "id": {
+                                "type": "string",
+                                "example": "gBEGlyVGZjUpAgmyuqAHfxbHmnQ"
+                              },
+                              "status": {
+                                "type": "integer",
+                                "format": "int32",
+                                "example": 200
+                              },
+                              "object_id": {
+                                "type": "integer",
+                                "format": "int64",
+                                "example": 38383744,
+                                "description": "Object ID. This is a commbox generated number (optional)"
+                              }
+                            }
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "recipient": {
+                                "type": "string",
+                                "description": "Recipient number",
+                                "example": 972546663529
+                              },
+                              "status": {
+                                "type": "integer",
+                                "format": "int32",
+                                "example": 400
+                              },
+                              "failed": {
+                                "type": "object",
+                                "example": "invalid — Not a valid WhatsApp user"
+                              }
+                            }
+                          }
+                        ]
+                      }
                     }
                   }
                 }
@@ -5620,7 +5723,54 @@
             }
           },
           "400": {
-            "description": "Bad Request - The request could not be understood by the server. Incoming parameters might not be valid"
+            "description": "Provider returned failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": 400
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Missing parameter template_name"
+                    },
+                    "response_time": {
+                      "type": "string",
+                      "example": "2014-08-06T07:51:52.2581942Z"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "recipient": {
+                                "type": "string",
+                                "description": "Recipient number",
+                                "example": 972546663529
+                              },
+                              "status": {
+                                "type": "integer",
+                                "format": "int32",
+                                "example": 400
+                              },
+                              "failed": {
+                                "type": "object",
+                                "example": "invalid — Not a valid WhatsApp user"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized - The supplied credentials, if any, are not sufficient to access the resource"
