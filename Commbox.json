@@ -5660,7 +5660,7 @@
                     },
                     "description": {
                       "type": "string",
-                      "example": "Partial Content"
+                      "example": "Missing template parameter"
                     },
                     "response_time": {
                       "type": "string",
@@ -5735,7 +5735,7 @@
                     },
                     "description": {
                       "type": "string",
-                      "example": "Partial Content"
+                      "example": "Missing parameter template_name"
                     },
                     "response_time": {
                       "type": "string",
