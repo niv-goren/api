@@ -5522,7 +5522,6 @@
                             "schedule": {
                               "type": "integer",
                               "example": 1646922284,
-                              "required": false,
                               "description": "schedule the sending of the template to a specific date and time"
                             },
                             "template_data": {
@@ -5552,7 +5551,40 @@
                                       }
                                     },
                                     "components": {
-                                      "type": "array"
+                                      "type": "array",
+                                      "items": {
+                                        "oneOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "example": "header"
+                                              },
+                                              "parameters": {
+                                                "type": "array",
+                                                "items": {
+                                                  "oneOf": [
+                                                    {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "type": {
+                                                          "type": "string",
+                                                          "example": "text"
+                                                        },
+                                                        "text": {
+                                                          "type": "string",
+                                                          "example": "Some text..."
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
                                     }
                                   }
                                 }
@@ -6000,7 +6032,7 @@
                         "type": "boolean",
                         "example": false
                       },
-                     "ChildTag": {
+                      "ChildTag": {
                         "type": "boolean",
                         "example": false
                       }
