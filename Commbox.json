@@ -5306,6 +5306,10 @@
 										"type": "string",
 										"example": "+9725051234567"
 									},
+									"recipients": {
+										"type": "string array",
+										"example": ["+9725051234567","+972524518951","+972547996251"]
+									},
 									"template_name": {
 										"type": "string",
 										"example": "Template Name"
@@ -5344,6 +5348,10 @@
 										}
 									},
 									"validate": {
+										"type": "boolean",
+										"example": true
+									},
+									"save_object": {
 										"type": "boolean",
 										"example": true
 									}
