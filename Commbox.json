@@ -5297,6 +5297,7 @@
 				}],
 				"requestBody": {
 					"required": true,
+					"description": "Note that you need to choose between the 'recipient' parameter for single phone number and the 'recipients' parameter for multiple phone numbers. The 'recipients' parameter is limited to 20 phone numbers at most.",
 					"content": {
 						"application/json": {
 							"schema": {
