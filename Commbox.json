@@ -7623,7 +7623,11 @@
 			"TotalSyncAssigned": {
 			  "type": "integer",
 			  "description": "Total number of currently assigned synchronous objects (Chat/messenger conversations)"
-			}
+			},
+			"Password": {
+				"type": "String",
+				"description": "Description of password"
+			  }
 		  }
 		},
 		"Object_custom_indicator": {
