@@ -7625,7 +7625,7 @@
 			  "description": "Total number of currently assigned synchronous objects (Chat/messenger conversations)"
 			},
 			"Password": {
-				"type": "String",
+				"type": "string",
 				"description": "Description of password"
 			  }
 		  }
