@@ -5506,7 +5506,25 @@
                     ]
                   }
                 },
-                "Send a template with text + Object data": {
+                "Send a template with text": {
+                  "value": {
+                    "data": [
+                      {
+                        "template_data": {
+                          "to": "972537280801",
+                          "template": {
+                            "name": "Text Template",
+                            "language": {
+                              "code": "en"
+                            },
+                            "components": []
+                          }
+                        },
+                      }
+                    ]
+                  }
+                },
+                 "Send a template with text + Object data": {
                   "value": {
                     "data": [
                       {
