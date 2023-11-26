@@ -5474,38 +5474,6 @@
           "content": {
             "application/json": {
               "examples": {
-                "Send a template with 2 body parameters": {
-                  "value": {
-                    "data": [
-                      {
-                        "template_data": {
-                          "to": "972537280000",
-                          "template": {
-                            "name": "Basic WA template",
-                            "language": {
-                              "code": "en"
-                            },
-                            "components": [
-                              {
-                                "type": "body",
-                                "parameters": [
-                                  {
-                                    "type": "text",
-                                    "text": "Hellooooo"
-                                  },
-                                  {
-                                    "type": "text",
-                                    "text": "my friend"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    ]
-                  }
-                },
                 "Send a template with text": {
                   "value": {
                     "data": [
@@ -5550,6 +5518,38 @@
                             "Phone1": "972537280000",
                             "Email": "John.D@gmail.com",
                             "Remarks": "Resturning customer"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "Send a template with 2 body parameters": {
+                  "value": {
+                    "data": [
+                      {
+                        "template_data": {
+                          "to": "972537280000",
+                          "template": {
+                            "name": "Basic WA template",
+                            "language": {
+                              "code": "en"
+                            },
+                            "components": [
+                              {
+                                "type": "body",
+                                "parameters": [
+                                  {
+                                    "type": "text",
+                                    "text": "Hellooooo"
+                                  },
+                                  {
+                                    "type": "text",
+                                    "text": "my friend"
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         }
                       }
