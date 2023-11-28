@@ -5474,6 +5474,56 @@
           "content": {
             "application/json": {
               "examples": {
+                "Send a template with text": {
+                  "value": {
+                    "data": [
+                      {
+                        "template_data": {
+                          "to": "972537280801",
+                          "template": {
+                            "name": "Text Template",
+                            "language": {
+                              "code": "en"
+                            },
+                            "components": []
+                          }
+                        },
+                      }
+                    ]
+                  }
+                },
+                 "Send a template with text + Object data": {
+                  "value": {
+                    "data": [
+                      {
+                        "template_data": {
+                          "to": "972537280801",
+                          "template": {
+                            "name": "Text Template",
+                            "language": {
+                              "code": "en"
+                            },
+                            "components": []
+                          }
+                        },
+                        "object_data": {
+                          "createChildObject": true,
+                          "SubStreamId": 0,
+                          "StatusId": 1,
+                          "Content": {},
+                          "User": {
+                            "UniqueId": "01234567",
+                            "LastName": "Doe",
+                            "FirstName": "John",
+                            "Phone1": "972537280000",
+                            "Email": "John.D@gmail.com",
+                            "Remarks": "Resturning customer"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
                 "Send a template with 2 body parameters": {
                   "value": {
                     "data": [
@@ -5500,38 +5550,6 @@
                                 ]
                               }
                             ]
-                          }
-                        }
-                      }
-                    ]
-                  }
-                },
-                "Send a template with text + Object data": {
-                  "value": {
-                    "data": [
-                      {
-                        "template_data": {
-                          "to": "972537280801",
-                          "template": {
-                            "name": "Text Template",
-                            "language": {
-                              "code": "en"
-                            },
-                            "components": []
-                          }
-                        },
-                        "object_data": {
-                          "createChildObject": true,
-                          "SubStreamId": 0,
-                          "StatusId": 1,
-                          "Content": {},
-                          "User": {
-                            "UniqueId": "01234567",
-                            "LastName": "Doe",
-                            "FirstName": "John",
-                            "Phone1": "972537280000",
-                            "Email": "John.D@gmail.com",
-                            "Remarks": "Resturning customer"
                           }
                         }
                       }
