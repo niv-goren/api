@@ -50,8 +50,16 @@
       "description": "A Team is a group of agents with specific business agendas, roles, and permissions. Admins and Team Managers can set up Team Managers to create and manage teams and give those teams specific inbox filters, tags, and knowledge-based assets."
     },
     {
+      "name": "Forms",
+      "description": "The Forms module enables agents to guide their customers with predefined fill-in fields and digitally signed forms."
+    },
+    {
+      "name": "Authentication",
+      "description": "Authentication APIs provide accessibility to the system."
+    },
+    {
       "name": "Automation",
-      "description": "<br><br>Automation APIs are related to bot capabilities."
+      "description": "Automation APIs are related to bot capabilities."
     }
   ],
   "info": {
@@ -6861,7 +6869,7 @@
         "tags": [
           "WhatsApp"
         ],
-        "summary": "Validate WhatsApp account",
+        "summary": "Validate WhatsApp Account",
         "description": "### Validate WhatsApp Account\nAs a business, you must provide customers with the option to opt in and receive WhatsApp communications, as well as stating your business name in a clear opt-in flow process.<br>After the customer opts in, use the contacts node to validate the registered number.<br><br> For more information, visit: <https://developers.facebook.com/docs/whatsapp/guides/opt-in/><br><br><b>Note: Checking too many phone numbers without sending them messages will lead to WA banning you.</b><br>Only verify phone numbers critical to your business that you have already received opt-in for.",
         "operationId": "Validate_WhatsApp_Acoount",
         "parameters": [
@@ -7771,10 +7779,10 @@
     "/auth/ticket": {
       "post": {
         "tags": [
-          "Ticket"
+          "Authentication"
         ],
         "summary": "Create Ticket",
-        "description": "CommBox allows certain management personnel access to the CommBox platform without the requirement of username and password.<br>This API returns a session cookie that is added to login URL to bypasses the username and password screen.<br><br> Format:  Login URL + the characters ?=TA  + the session cookie returned by the API<br><br>Example: https://bumpyard.commbox.io/login?=TAhZ8uTCLgf1HnOwVy_bIEWVJD0VXnIcbMKTT9R6_bW0prs_fYgzbzQCRMpdPZw1FopLHoGJG0VUDFk3zYEfkG_fEf9hnk50lR72BZHp7X_f94jZQbJNP4ysWmRJ3Lqc <br><br>Note: Managers who wish to gain access to CommBox via the authentication ticket, must be set as users in each account (brand).<br><br>Note: Mandatory fields include the business account name (brand), and all fields which are mandatory when creating a user for that brand (For example, FirstName, LastName, Phone, email address, etc.). System will return the cookie if there is a match in the database with all mandatory fields. <br><br>Note: Most params are of the String type, including the phone number. This is designed to accommodate standard records like +44 for country code, or 212-123-4567 for area code format. Make sure to add “ “ around the phone number as well. <br><br>Note: Once created, tickets are only valid for 60 seconds for the management system and 5 minutes for other applications. ",
+        "description": "CommBox allows certain management personnel access to the CommBox platform without the requirement of username and password.<br>This API returns a session cookie that is added to login URL to bypasses the username and password screen.<br><br> Format:  Login URL + the characters ?=TA  + the session cookie returned by the API<br><br>Example: https://bumpyard.commbox.io/login?=TAhZ8uTCLgf1HnOwVy_bIEWVJD0VXnIcbMKTT9R6_bW0prs_fYgzbzQCRMpdPZw1FopLHoGJG0VUDFk3zYEfkG_fEf9hnk50lR72BZHp7X_f94jZQbJNP4ysWmRJ3Lqc <br><br>Note: Managers who wish to gain access to CommBox via the authentication ticket, must be set as users in each account (brand).<br><br><b>Note:</b><br>a) Mandatory fields include the business account name (brand), and all fields which are mandatory when creating a user for that brand (For example, FirstName, LastName, Phone, email address, etc.). System will return the cookie if there is a match in the database with all mandatory fields. <br><br>b) Most params are of the String type, including the phone number. This is designed to accommodate standard records like +44 for country code, or 212-123-4567 for area code format. Make sure to add “ “ around the phone number as well. <br><br>c) Once created, tickets are only valid for 60 seconds for the management system and 5 minutes for other applications. ",
         "operationId": "Create_Ticket",
         "requestBody": {
           "description": "Optional description for new mail object in  *Markdown*",
